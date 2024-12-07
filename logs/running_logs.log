@@ -1,0 +1,29 @@
+[2024-12-06 19:48:30,076: INFO: utils: NumExpr defaulting to 8 threads.]
+[2024-12-06 19:48:40,420: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-12-06 19:48:40,449: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-06 19:48:40,469: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-12-06 19:48:40,469: ERROR: main: yaml file is empty]
+Traceback (most recent call last):
+  File "d:\ml projects\end to end ml project\src\mlProject\utils\common.py", line 32, in read_yaml
+    return ConfigBox(content)
+           ^^^^^^^^^^^^^^^^^^
+  File "box\\box.py", line 284, in box.box.Box.__init__
+box.exceptions.BoxValueError: Cannot extrapolate Box from string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\ML Projects\End to End ML project\main.py", line 13, in <module>
+    data_ingestion.main()
+  File "d:\ml projects\end to end ml project\src\mlProject\pipeline\stage_01_data_ingestion.py", line 14, in main
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ml projects\end to end ml project\src\mlProject\config\configuration.py", line 17, in __init__
+    self.params = read_yaml(params_filepath)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sagar\anaconda3\Lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ml projects\end to end ml project\src\mlProject\utils\common.py", line 34, in read_yaml
+    raise ValueError("yaml file is empty")
+ValueError: yaml file is empty
